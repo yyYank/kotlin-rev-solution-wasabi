@@ -84,8 +84,6 @@ public class ServerRun {
 
             val jsList = listSegments("site/js")
             val cssList = listSegments("site/css")
-            jsList.forEach { println(it) }
-            cssList.forEach { println(it) }
             // js
             httpGets(jsList, "text/javascript")
             // css

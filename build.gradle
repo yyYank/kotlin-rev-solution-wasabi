@@ -1,0 +1,51 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url 'http://oss.sonatype.org/content/repositories/snapshots'
+        }
+    }
+    dependencies {
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.1-SNAPSHOT'
+    }
+}
+
+apply plugin: "kotlin"
+apply plugin: 'application'
+
+mainClassName = 'kotlin.rev.solution.wasabi.ServerRun'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://oss.sonatype.org/content/repositories/snapshots'
+    }
+    maven {
+        url "http://repository.jetbrains.com/all"
+    }
+}
+
+dependencies {
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:0.1-SNAPSHOT'
+    compile 'org.wasabi:wasabi:0.1-SNAPSHOT'
+    testCompile 'junit:junit:4.11'
+}
+
+sourceSets {
+    src {
+        main {
+            kotlin
+        }
+    }
+    test {
+        main {
+            kotlin
+        }
+    }
+    main.java.srcDirs += 'src/main/kotlin'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.8'
+}

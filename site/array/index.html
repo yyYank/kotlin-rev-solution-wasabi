@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="yy_yank">
+        <link rel="canonical" href="http://kotlin-rev-solution.herokuapp.com/site/array/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+        <title>配列を生成する - 逆引きKotlin</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">逆引きKotlin</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">目次 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../kotlin-install">Kotlinをインストールする</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../kotlin-plugin-intellij">KotlinプラグインをIntelliJ IDEAに導入する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../kotlin-plugin-androidstudio">KotlinプラグインをAndroid Studioに入れる</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../hello-kotlin-android">AndroidでHelloWorld</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../kotlin-plugin-eclipse">KotlinをEclipseで動かす</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../variable">変数を宣言する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../type">型を宣言する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../instance">インスタンスを生成する</a>
+                            </li>
+                        
+                            <li class="active">
+                                <a href=".">配列を生成する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../function">関数を宣言する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../if-statement">条件分岐を行う</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../if-function">ifを式として扱う</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../when">switchみたいな条件分岐がしたい</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../loop">ループ処理を行う</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li >
+                    <a rel="next" href="../instance">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../function">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/yyYank/kotlin-rev-solution">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#_1">配列を生成する</a></li>
+        
+            <li><a href="#_2">フォーマット</a></li>
+        
+            <li><a href="#_3">実装サンプル</a></li>
+        
+            <li><a href="#array-listof-arraylistof-linkedlistof">array, listOf, arrayListOf, linkedListOf</a></li>
+        
+            <li><a href="#_4">実装サンプル</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="_1">配列を生成する</h2>
+<p>配列の利用は、Arrayクラスのインスタンスを生成します。</p>
+<h3 id="_2">フォーマット</h3>
+<p>説明をとても省略して簡単に言うと、以下のフォーマットで
+配列を作成します。</p>
+<pre><code>Array&lt;型名&gt;(要素の数, {初期化処理})
+</code></pre>
+<h3 id="_3">実装サンプル</h3>
+<p>実際には以下のように宣言します。
+(偶数を宣言しています)</p>
+<pre><code>// [0, 2, 4 , 6, 8, 10, 12, 14, 16, 18]
+val evenNumbers = Array&lt;Int&gt;(10, {it * 2})
+</code></pre>
+<h3 id="array-listof-arraylistof-linkedlistof">array, listOf, arrayListOf, linkedListOf</h3>
+<p>配列の宣言にはKotlinの標準ライブラリとして以下の関数が提供されています。</p>
+<h4 id="array">array</h4>
+<p>Arrayインスタンスを簡易に生成</p>
+<h4 id="listof">listOf</h4>
+<p>java.util.Listを生成。要素を変更できません。</p>
+<h4 id="arraylistof">arrayListOf</h4>
+<p>java.util.ArrayListインスタンスを生成。Javaと同様に追加、削除などが可能。</p>
+<h4 id="linkedlistof">linkedListOf</h4>
+<p>java.util.LinkedListインスタンスを生成。Javaと同様に追加、削除などが可能。</p>
+<p>arrayListという関数もあったようですが、非推奨になっています。  </p>
+<h3 id="_4">実装サンプル</h3>
+<pre><code>val oddNumbers = array(1, 3, 5, 7, 9)
+val list = listOf(1,2,3,4,5)
+val arrayList = arrayListOf(1,2,3,4,5)
+val linkedList = linkedListOf(1,2,3,4,5)
+</code></pre>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/></p>
+<h4 id="kotlin">ページ公開時のKotlinのバージョン</h4>
+<p>0.10.195 </p>
+</div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/prettify-1.0.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+    </body>
+</html>

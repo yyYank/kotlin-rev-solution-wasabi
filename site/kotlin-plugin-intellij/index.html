@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="yy_yank">
+        <link rel="canonical" href="http://kotlin-rev-solution.herokuapp.com/site/kotlin-plugin-intellij/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+        <title>KotlinプラグインをIntelliJ IDEAに導入する - 逆引きKotlin</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">逆引きKotlin</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">目次 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../kotlin-install">Kotlinをインストールする</a>
+                            </li>
+                        
+                            <li class="active">
+                                <a href=".">KotlinプラグインをIntelliJ IDEAに導入する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../kotlin-plugin-androidstudio">KotlinプラグインをAndroid Studioに入れる</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../hello-kotlin-android">AndroidでHelloWorld</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../kotlin-plugin-eclipse">KotlinをEclipseで動かす</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../variable">変数を宣言する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../type">型を宣言する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../instance">インスタンスを生成する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../array">配列を生成する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../function">関数を宣言する</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../if-statement">条件分岐を行う</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../if-function">ifを式として扱う</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../when">switchみたいな条件分岐がしたい</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../loop">ループ処理を行う</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li >
+                    <a rel="next" href="../kotlin-install">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../kotlin-plugin-androidstudio">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/yyYank/kotlin-rev-solution">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#kotlinintellij-idea">KotlinプラグインをIntelliJ IDEAに導入する</a></li>
+        
+            <li><a href="#_1">事前準備</a></li>
+        
+            <li><a href="#_2">プラグイン導入手順</a></li>
+        
+            <li><a href="#kotlinhello-world">KotlinでHello Worldしてみよう</a></li>
+        
+            <li><a href="#hello-world">Hello World</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="kotlinintellij-idea">KotlinプラグインをIntelliJ IDEAに導入する</h2>
+<h3 id="_1">事前準備</h3>
+<ul>
+<li>IntelliJ IDEAのインストール</li>
+</ul>
+<h3 id="_2">プラグイン導入手順</h3>
+<ul>
+<li>IntelliJ IDEA起動</li>
+<li>Preferencesを開く（Ctrl(cmd) + カンマもしくはIntelliJ IDEA&gt;Preferences）</li>
+<li>Pluginsを選択する
+<img alt="図１" src="http://3.bp.blogspot.com/-IeqtRGH9heA/VP7ejZ5dpPI/AAAAAAAACRE/gCpTiY6K4M0/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2015-03-10%2B21.06.52.png" /></li>
+<li>Install JetBrains Plugin...を選択する
+<img alt="図２" src="http://4.bp.blogspot.com/-VsJlgrXtGn0/VP7gGEG8Y2I/AAAAAAAACRU/I5LQ29tsayI/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2015-03-10%2B21.13.36.png" /></li>
+<li>Installを押す</li>
+<li>IntelliJ IDEAを再起動</li>
+</ul>
+<p>これでプラグイン導入は完了です</p>
+<h3 id="kotlinhello-world">KotlinでHello Worldしてみよう</h3>
+<ul>
+<li>IntelliJ IDEA起動</li>
+<li>New Projectを選択</li>
+<li>任意のプロジェクトを作成</li>
+<li>プロジェクトを生成</li>
+<li>File&gt;New&gt;Kotlin Fileを選択</li>
+</ul>
+<h3 id="hello-world">Hello World</h3>
+<p>こんなかんじで書いてみましょう。</p>
+<pre><code>fun main(args : Array&lt;String&gt;) {
+    println("hello Kotlin!")
+}
+</code></pre>
+<ul>
+<li>Run &gt; Run Default Packageでプログラムを実行。   </li>
+</ul>
+<p>hello Kotlin!と出力されたら成功です。</p>
+<p><img alt="図３" src="http://3.bp.blogspot.com/-Q6wHd05l_RE/VP7pZciMllI/AAAAAAAACRs/v1rI6pKTOd4/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2015-03-10%2B21.52.59.png" />  </p>
+</div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/prettify-1.0.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+    </body>
+</html>

@@ -1,1 +1,1 @@
-web: ./gradlew run
+web: ./build/install/kotlin-rev-solution/bin/app

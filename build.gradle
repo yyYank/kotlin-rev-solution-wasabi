@@ -50,4 +50,4 @@ sourceSets {
 task wrapper(type: Wrapper) {
     gradleVersion = '1.8'
 }
-task stage(dependsOn: ['clean', 'installApp'])
+task stage(dependsOn: ['clean', 'run', 'installApp'])

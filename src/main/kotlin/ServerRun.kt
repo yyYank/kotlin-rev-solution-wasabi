@@ -20,7 +20,7 @@ public class ServerRun {
          * main
          */
         platformStatic fun main(args: Array<String>) {
-            val port = System.getenv("PORT") ?: "8080"
+            val port = System.getenv("PORT") // ?: "8080"
             val config = AppConfiguration(port.toInt())
             val server = AppServer(config)
             server.enableContentNegotiation()
